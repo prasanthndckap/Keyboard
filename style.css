@@ -64,7 +64,11 @@ input:hover{
 .arrange{
     font-size: 15px;
 }
-
+.Symbol{
+    width: 12%;
+    text-align: start;
+    padding-left: 5px;
+}
 
 .keys{
     display: flex;

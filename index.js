@@ -12,7 +12,7 @@ function changecase() {
     for (let j = 0; j < keyword.length; j++) {
         let notthis = keyword[j].value;
         let cases = notthis != "Enter" && notthis != "Backspace" && notthis != "Shift" && notthis != "Space"
-        && notthis != "Tab" && notthis != "CapsLock"  && notthis != "Delete"    && notthis != ".com"
+        && notthis != "Tab" && notthis != "CapsLock"  && notthis != "Delete"    && notthis != ".com"  && notthis != "Symbols"
         if (caps.classList.contains("case")) {
             if (cases) {
                     keyword[j].value = keyword[j].value.toUpperCase();
@@ -25,8 +25,7 @@ function changecase() {
 
     }
 }
-// adding function to changecase and change symbols while clicking the Shift button
-function addshift() {
+function symbols(){
     for (let i = 0; i < change.length; i++) {
         change[i].classList.toggle("show");
        
@@ -34,6 +33,10 @@ function addshift() {
     } for (let k = 0; k < numberrow.length; k++) {
         numberrow[k].classList.toggle("change");
     }
+}
+// adding function to changecase and change symbols while clicking the Shift button
+function addshift() {
+    symbols()
  for(let i=0;i<shifts.length;i++){
 
  
@@ -43,11 +46,11 @@ function addshift() {
         if (shifts[i].classList.contains("addshift")) {
     // adding not function to
             if (notthis != "Enter" && notthis != "Backspace" && notthis != "Shift" && notthis != "Space"
-                && notthis != "Tab" && notthis != "CapsLock"  && notthis != "Delete"    && notthis != ".com") {
+                && notthis != "Tab" && notthis != "CapsLock"  && notthis != "Delete"    && notthis != ".com"  && notthis != "Symbols") {
                     keyword[j].value=keyword[j].value.toUpperCase();
             }
         }
-        else  if (notthis != "Backspace" && notthis != "Enter" && notthis!= "Shift" && notthis!= "Space" && notthis != "Tab" && notthis != "CapsLock"  && notthis != "Delete"   && notthis != ".com") {
+        else  if (notthis != "Backspace" && notthis != "Enter" && notthis!= "Shift" && notthis!= "Space" && notthis != "Tab" && notthis != "CapsLock"  && notthis != "Delete"   && notthis != ".com"  && notthis != "Symbols") {
            
             keyword[j].value =keyword[j].value.toLowerCase();
         }
@@ -68,13 +71,15 @@ window.addEventListener("keyup",(e)=>{
     }
 
 })
-// adding function to laptop keys  is eaual to online keyboard button while click the the keys  text will print on the textarea
+// adding function to laptop keys  is eaual to online keyboard button
+//  while click the the keys  text will print on the textarea
 window.addEventListener("keyup", (e) => {
     let store = e.key
     // console.log(store);
 
  
-    if (store != "Backspace" && store != "Enter" && store != "Shift" && store != "Delete" && store != "CapsLock" && store != "Tab") {
+    if (store != "Backspace" && store != "Enter" && store != "Shift" && store != "Delete" 
+    && store != "CapsLock" && store != "Tab" && store != "Symbols" ) {
    
         textarea.value += store;
     } else if (store == "Backspace") {
@@ -118,11 +123,14 @@ for (let i = 0; i < keyword.length; i++) {
         } else if(Keys === "Delete"){
             textarea.value = ""
 
+        } 
+        else if(Keys === "Symbols"){
+            symbols()
         }
         else if (keyword[i].classList.contains("shift")) {
             addshift();
 
-        }
+        } 
 
         else {
             textarea.value += e.target.value
