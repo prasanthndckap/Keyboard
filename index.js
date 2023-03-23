@@ -87,10 +87,9 @@ window.addEventListener("keyup", (e) => {
     } else if (store == "Enter") {
         textarea.value += "\n";
     } else if (store == "Tab") {
-        textarea.value += "    "
+        textarea.value = "    "
     } else if (store == "Delete") {
         textarea.value = " ";
-        // alert("hii")
     } else if (store == "CapsLock") {
         changecase();
     } else if (store == "Shift") {
@@ -159,39 +158,3 @@ for (let i = 0; i < keyword.length; i++) {
 
 
 
-
-
- // else  if(Keys = "space"){
-
-        // }
-        // else if(Keys === "Shift"){
-
-        //     // keyword[i].classList.toggle("caps")
-        //     for(let j=0;j<keyword.length;j++){
-
-
-
-        //         // if(keyword[i].classList.contains("caps")){
-
-        //         if(notthis != "Enter" && notthis != "Backspace" && notthis != "Shift" ){
-        //         notthis = notthis.toUpperCase();
-        //         // }
-        //     }else{
-        //         notthis = notthis.toLowerCase();
-        //     }
-        //     }
-        // }
-
-        // else if(Keys === "Shift"){
-        //     alert("hii")
-        //     for(let k=0;k<keyword.length;k++){
-        //         if(keyword[k].value != "")
-        //         {
-        //         keyword[k].value = keyword[k].value.toLowerCase();
-        //         }
-        //         else{
-        //             keyword[k].value = keyword[k].value.toUpperCase()
-        //         }
-        //     }
-
-        // }
